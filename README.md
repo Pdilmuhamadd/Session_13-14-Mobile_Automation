@@ -1,2 +1,4 @@
-# Session_13-Mobile_Automation
-mobile automation project session 13 - digitalskola
+**DigitalSkola**
+# Session_13 & 14 - Mobile_Automation
+Setting Up Mobile Automation with Appium session 13
+Advanced Mobile Testing with Appium session 14 
