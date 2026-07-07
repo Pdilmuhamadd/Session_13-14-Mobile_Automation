@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","20186","verify homepage, scroll down/up, filter and logout","Home Page","2026-07-07","passed","2026-07-07","","","",""
+"","12895","should show error when login with locked out user","Swag Labs App","2026-07-07","passed","2026-07-07","","","",""
+"","10501","should launch app and verify login page","Swag Labs App","2026-07-07","passed","2026-07-07","","","",""

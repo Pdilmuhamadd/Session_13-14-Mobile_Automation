@@ -22,7 +22,7 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/*.spec.js' 
     ],
     // Patterns to exclude.
     exclude: [
@@ -44,22 +44,24 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        "platformName": "Android",
+        maxInstances: 1,
+        platformName: "Android",
         "appium:automationName": "UiAutomator2",
         "appium:deviceName": "emulator-5554",
         "appium:platformVersion": "12",
-        "appium:appWaitActivity": "com.swaglabsmobileapp.*",
+        "appium:app": "./app/sauce-labs.2.7.1.apk",
+        "appium:appWaitActivity": "*",
         "appium:noReset": false,
         "appium:fullReset": false,
         "appium:autoGrantPermissions": true,
-        "appium:newCommandTimeout": 300
+        "appium:newCommandTimeout": 6500
     }],
 
 
@@ -133,7 +135,15 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: [
+        'spec',
+        ['allure',{
+            outputDir: './reports/allure-results',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotsReporting: false,
+            userCucumberStepReporter: false
+        }]
+    ],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

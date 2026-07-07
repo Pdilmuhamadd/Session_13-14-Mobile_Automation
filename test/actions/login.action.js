@@ -24,6 +24,8 @@ export class LoginAction {
         await this.enterUsername(username)
         await this.enterPassword(password)
         await this.tapLogin()
+
+        await driver.pause(4000)
     }
 
     async waitForProducts() {
@@ -34,6 +36,7 @@ export class LoginAction {
 
     async isOnLoginPage() {
         const btn = await $(loginPage.loginButton)
+        await btn.waitForDisplayed({ timeout: 15000 });
         return btn.isExisting()
     }
 }

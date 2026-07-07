@@ -1,6 +1,6 @@
 export class LoginPage {
     get loginButton() {
-        return 'android=new UiSelector().text("LOGIN")'
+        return '~test-LOGIN';
     }
 
     get productsTitle() {
